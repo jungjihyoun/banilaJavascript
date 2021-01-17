@@ -82,7 +82,6 @@ class Rectangle extends Shape{
         super.draw(); //->부모의 함수도 호출
         console.log('new rectangle');
     }
-
 }
 
 class Triangle extends Shape{  getArea(){

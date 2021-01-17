@@ -27,6 +27,7 @@ const password = prompt('enter your password');
 userStorage.loginUser(
     id,
     password,
+    //callback F 01
     User =>{
         UserStorage.getRoles(
             user,
@@ -44,3 +45,5 @@ userStorage.loginUser(
         console.log(error);
     }
 );
+
+
