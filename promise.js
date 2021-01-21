@@ -1,4 +1,5 @@
-//promise
+
+//################## promise ################
 
 //1.Producer
 const promise = new Promise ((resolve, reject) => {
@@ -8,7 +9,7 @@ const promise = new Promise ((resolve, reject) => {
         reject(new Error('no network'));
     },2000);
 });
-
+ 
 
 //2.consumer : then, catch , finally
 promise
@@ -57,3 +58,4 @@ getHen()
 })
 .then(cook)
 .then(console.log)
+
