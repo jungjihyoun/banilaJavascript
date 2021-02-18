@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <a href="javascript:kakaoLogin();"><img src="https://www.gb.go.kr/Main/Images/ko/member/certi_kakao_login.png" style = "height: 60px; width:auto;"></a>
+
+
+
+  <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+
+  <script>
+  window.Kakao.init("aed3f55778fa3028b32fa06b6539c02e");
+  function kakaoLogin(){
+    window.Kakao.Auth.login({
+      scope: 'profile, account_email, gender',
+      success: function(authObj){
+        console.log(authObj);
+        window.Kakao.API.request({
+          url:'/v2/user/me',   //login한 유저 정보 가져옴   
+          success: response =>{
+            const Kakao_account = response.kakao_account;
+            console.log(Kakao_account);
+          }
+        });
+      }
+    });
+  }
+
+  </script>
+
+
+
+
+
+ 
+</body>
+</html>
